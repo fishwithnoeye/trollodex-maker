@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trollodex Maker</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+
+        <div class="test">
+            <div id="text-boxes">
+                <input id="lastname" class="inputbox"placeholder="last name" maxlength="6" autocomplete="off">
+                <br>
+                <input id="firstname" class="inputbox" placeholder="first name" maxlength="6" autocomplete="off">
+                <div id="icon" class="inputbox"></div>
+                <div id="sigil" class="inputbox"></div>
+                <div id="color" class="inputbox"></div>
+                <div id="grade" class="inputbox"></div>
+                <input id="role" class="inputbox" placeholder="Class of Aspect" autocomplete="off">
+                <input id="dor" class="inputbox" placeholder="weird repiton date" autocomplete="off">
+                <div id="hemo" class="inputbox"></div>
+                <input id="hex" class="inputbox" maxlength="7" placeholder="hex code" autocomplete="off">
+                <input id="sigilname" class="inputbox" placeholder="sigil name" autocomplete="off">
+                <input id="height" class="inputbox" placeholder="height" autocomplete="off">
+                <textarea id="horns" class="inputbox" placeholder="horn description" autocomplete="off" maxlength="194" rows="3"></textarea>
+                <input id="genid" class="inputbox" placeholder="genid" autocomplete="off">
+                <div id="bonding">
+                    <select name="bond" id="bondmates">
+                        <option value="N/A">N/A</option>
+                        <option value="M">M</option>
+                        <option value="K" style="font-weight: bold;">K</option>
+                    </select>
+                    <input id="mate" class="inputbox" placeholder="bondmate" autocomplete="off">
+                </div>
+                <textarea id="designation" class="inputbox" placeholder="designation/job" autocomplete="off" maxlength="238"></textarea>
+                <input id="doi" class="inputbox" placeholder="weird ass repiton date here" autocomplete="off">
+            </div>
+            <img src="TD_Base.png" id="td-base">
+        </div>
+        <div id="thing">
+            <h1><a id="credits" href="https://github.com/fishwithnoeye">Finn's TROLLODEX maker</a>
+            </h1>
+            <p id="instructions">
+                anything that has grey text next to it can be edited, hemotype and grade being the exception!
+                hemotype is mathematically generated and grade is randomly selected between s-tier and f-tier.
+                <br><br>
+                credits for these terms go to DECONRECONSTRUCTION and the VAST ERROR TEAM! all i did was write the code
+                and edit one of the existing cards to make this template.
+                <br><br>
+                if you wanna make another when youre done, refresh!<br>
+                feel free to show me the cards you make with this :^&#41;
+            </p>
+            <br>
+            <label>TROLLODEX ICON:</label>
+            <input type="file" id="fileInput" onchange="displayFileName()"><br>
+            <label>SIGIL ICON:</label>
+            <input type="file" id="sigilInput" onchange="displaySigilName()"><br>
+            <label>COLOR BAR:</label>
+            <input type="color" id="colorInput" onchange="displayColor(), hemotype()">
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
