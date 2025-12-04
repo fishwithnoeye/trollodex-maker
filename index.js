@@ -8,12 +8,14 @@ lastName.addEventListener("change", () => {
         lastName.value = lastName.value + ",";
     }
 })
-var hexcode = document.getElementById("hex");
+/* var hexcode = document.getElementById("hex");
 hexcode.addEventListener("change", () => {
     if (hexcode.value.length == 6){
         hexcode.value = "#"+hexcode.value;
     }
-})
+}) */
+
+
 /* sadly this below Doesnt Work...or whateva*/
 
 /*function displayFileName() { 
@@ -117,23 +119,9 @@ function hemotype(){
     grade.textContent = grades[Math.floor(Math.random()*grades.length)];
     let color = document.getElementById('color').style.backgroundColor;
     let colorInput = document.getElementById('colorInput');
-    r = color.split(",")[0].split("(")[1];
-    g = color.split(",")[1];
-    b = color.split(",")[2].split(")")[0];
-
-    hexr = r.toString(16);
-    if (hexr.length === 1){
-        hexr = "0" + hexr;
-    }
-    hexg = g.toString(16);
-    if (hexg.length === 1){
-        hexg = "0" + hexg;
-    }
-    hexb = b.toString(16);
-    if (hexb.length === 1){
-        hexb = "0" + hexb;
-    }
-    hex = `#${hexr}${hexg}${hexb}`;
+    r = parseInt(color.split(",")[0].split("(")[1]);
+    g = parseInt(color.split(",")[1]);
+    b = parseInt(color.split(",")[2].split(")")[0]);
 
     let rh = r/255;
     let gh = g/255;
@@ -284,7 +272,22 @@ function hemotype(){
         }
     }
 
-    console.log(`${caste} + ${subshade}, ${r},${g},${b}, ${hex}`);
+    
+    var hexr = r.toString(16);
+    var hexg = g.toString(16);
+    var hexb = b.toString(16);
+    if (hexr.length === 1){
+        hexr = "0"+hexr;
+    }
+    if (hexg.length === 1){
+        hexg = "0"+hexg;
+    }
+    if (hexb.length === 1){
+        hexb = "0"+hexb;
+    }
+    console.log("#"+hexr+hexg+hexb);
+    console.log(`${caste} + ${subshade}, ${r},${g},${b}`);
+    document.getElementById("hex").textContent = `#${hexr}${hexg}${hexb}`;
     document.getElementById('hemo').textContent = `${caste}§${subshade}`;
 }
 let select = document.getElementById("bondmates");
