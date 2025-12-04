@@ -4,7 +4,7 @@ This is a generator made for the [Vast Error/Snow Bound Blood]() community. The 
 
 This was made with Javascript, HTML, and CSS.
 
-It can be asked on my Neocities page, [fwne.neocities.org](https://fwne.neocities.org/), or by the [Github pages](https://fishwithnoeye.github.io/trollodex-maker/) link
+It can be accessed on my Neocities page, [fwne.neocities.org](https://fwne.neocities.org/), or by the [Github pages](https://fishwithnoeye.github.io/trollodex-maker/) link
 ## Credits
 - [Deconreconstruction](https://x.com/deconrecon_), creators of Vast Error/SBB
 - [Me](https://x.com/fishwithnoi), programmer
