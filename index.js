@@ -8,8 +8,15 @@ lastName.addEventListener("change", () => {
         lastName.value = lastName.value + ",";
     }
 })
+var hexcode = document.getElementById("hex");
+hexcode.addEventListener("change", () => {
+    if (hexcode.value.length == 6){
+        hexcode.value = "#"+hexcode.value;
+    }
+})
+/* sadly this below Doesnt Work...or whateva*/
 
-function displayFileName() {
+/*function displayFileName() { 
     const fileInput = document.getElementById('fileInput');
     const fileName = fileInput.files[0].name;
     var myImage = new Image();
@@ -20,16 +27,38 @@ function displayFileName() {
     } else{
         document.getElementById("icon").appendChild(myImage);
     }
+} */
+
+function displayFileName() {
+
+    var fileInput = document.getElementById("fileInput");
+    var canvas = document.getElementById("canvasicon");
+    var ctx = canvas.getContext("2d");
+
+    var file = fileInput.files[0]; 
+    if (!file) return; 
+    var img = new Image();
+    img.src = URL.createObjectURL(file);
+    img.onload = function () {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        URL.revokeObjectURL(img.src);
+    }
 }
+
 function displaySigilName() {
-    const sigilInput = document.getElementById('sigilInput');
-    const sigilName = sigilInput.files[0].name;
-    var myImage = new Image();
-    myImage.src = sigilName;
-    if (document.getElementById("sigil").firstChild){
-        document.getElementById("sigil").replaceChild(myImage, document.getElementById("sigil").firstChild);
-    } else{
-        document.getElementById("sigil").appendChild(myImage);
+    var sigilInput = document.getElementById("sigilInput");
+    var canvas = document.getElementById("canvassigil");
+    var ctx = canvas.getContext("2d");
+
+    var file = sigilInput.files[0]; 
+    if (!file) return; 
+    var img = new Image();
+    img.src = URL.createObjectURL(file);
+    img.onload = function () {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        URL.revokeObjectURL(img.src);
     }
 }
 function displayColor(){
@@ -302,3 +331,21 @@ myFunction(x);
 x.addEventListener("change", function() {
     myFunction(x);
 }); */
+
+
+var fileInput = document.getElementById("fileInput");
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+
+fileInput.onchange = function () {
+    var file = fileInput.files[0];
+    if (!file) return;
+
+    var img = new Image();
+    img.src = URL.createObjectURL(file);
+
+    img.onload = function () {
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        URL.revokeObjectURL(img.src);
+    };
+};

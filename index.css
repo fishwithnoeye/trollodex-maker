@@ -9,6 +9,11 @@ awkwardly formatted */
     font-size: 1.15em;
     
 }
+
+#canvas{
+    position: absolute;
+    top: 5%;
+}
 #done{
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
@@ -66,8 +71,9 @@ awkwardly formatted */
     left: 35.45%;
     top: 5.2%;
 }
-#icon img{
+#canvasicon{
     width: 250px;
+    height: 250px;
 }
 #sigil{
     z-index: 1000;
@@ -75,8 +81,9 @@ awkwardly formatted */
     left: 56.75%;
     top: 40%;
 }
-#sigil img{
+#canvassigil{
     width: 120px;
+    height: 120px;
 }
             #hemo{
                 width: 10%;
@@ -202,6 +209,7 @@ awkwardly formatted */
                 font-family: 'Courier New', Courier, monospace;
                 font-size: 1.15em;
                 appearance: none;
+                color: black;
             }
             #mate{
                 width: 10%;
