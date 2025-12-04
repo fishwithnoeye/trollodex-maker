@@ -144,7 +144,7 @@ function hemotype(){
     if (hue < 0){
         hue += 360;
     }
-
+    hue = Math.round(hue);
     val = Math.round(cmax*255);
     val = Math.round(val / 255 * 100);
 
